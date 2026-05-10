@@ -3,6 +3,8 @@ class Solution:
         max_sum = nums[0]
         run_sum = nums[0]
         for i in range(1,len(nums)):
-            run_sum = max(run_sum+nums[i],nums[i])
+            if run_sum<0:
+                run_sum=0
+            run_sum += nums[i]
             max_sum = max(max_sum,run_sum)
         return max_sum
